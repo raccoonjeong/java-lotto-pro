@@ -16,7 +16,6 @@ public class LottoMachine {
         return payment / LOTTO_SINGLE_PRICE;
     }
 
-
     public List<Lotto> issueLotto() {
         List<Lotto> lottos = new ArrayList<>();
         long count = lottoCount();
