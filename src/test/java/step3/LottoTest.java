@@ -57,4 +57,15 @@ public class LottoTest {
         }
     }
 
+    @Test
+    @DisplayName("지난주 당첨번호 문자열 입력 테스트")
+    public void winningLottoInputTest() {
+        final LastWinningLotto lastWinningLotto = new LastWinningLotto("1, 2, 3, 4, 5, 6");
+        final Lotto myLotto = new Lotto(Arrays.asList(1,2,3,7,8,9));
+
+        final long expect = 3;
+        final long actual = lastWinningLotto.howManyRight(myLotto);
+
+        assertThat(actual).isEqualTo(expect);
+    }
 }
