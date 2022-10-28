@@ -19,4 +19,17 @@ public class LottoTest {
         assertThat(actual).isEqualTo(expect);
     }
 
+    @Test
+    @DisplayName("구입금액으로 로또 몇개인지 계산 테스트")
+    public void howManyLottoByPrice() {
+        final long payment = 14_000;
+
+        LottoMachine lottoMachine = new LottoMachine(payment);
+
+        final long expect = 14;
+        final long actual = lottoMachine.lottoCount();
+
+        assertThat(actual).isEqualTo(expect);
+    }
+
 }
