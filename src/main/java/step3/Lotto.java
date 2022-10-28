@@ -6,6 +6,9 @@ public class Lotto {
 
     List<Integer> lottoNumbers;
 
+    public Lotto() {
+    }
+
     public Lotto(List<Integer> numbers) {
         lottoNumbers = numbers;
     }

@@ -2,6 +2,8 @@ package step3;
 
 import java.util.Arrays;
 import static org.assertj.core.api.Assertions.*;
+
+import java.util.List;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -21,13 +23,27 @@ public class LottoTest {
 
     @Test
     @DisplayName("구입금액으로 로또 몇개인지 계산 테스트")
-    public void howManyLottoByPrice() {
+    public void howManyLottoByPayment() {
         final long payment = 14_000;
 
         LottoMachine lottoMachine = new LottoMachine(payment);
 
         final long expect = 14;
         final long actual = lottoMachine.lottoCount();
+
+        assertThat(actual).isEqualTo(expect);
+    }
+
+    @Test
+    @DisplayName("구입금액으로 로또가 실제로 그 갯수만큼 반환되었는지 테스트")
+    public void howManyLottoByPaymentAccurately() {
+        final long payment = 14_000;
+
+        LottoMachine lottoMachine = new LottoMachine(payment);
+
+        final long expect = 14;
+        List<Lotto> myLottos = lottoMachine.issueLotto();
+        final long actual = myLottos.size();
 
         assertThat(actual).isEqualTo(expect);
     }
