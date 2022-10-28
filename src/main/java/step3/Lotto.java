@@ -1,7 +1,6 @@
 package step3;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -19,6 +18,7 @@ public class Lotto {
         Collections.shuffle(numberBox);
         lottoNumbers = numberBox.subList(0, 6);
         Collections.sort(lottoNumbers);
+        System.out.println(lottoNumbers);
     }
 
     public Lotto(List<Integer> numbers) {
