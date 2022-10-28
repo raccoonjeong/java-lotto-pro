@@ -1,3 +1,5 @@
+package step1;
+
 public class StringManager {
 
     public String[] splitByComma(String string) {
