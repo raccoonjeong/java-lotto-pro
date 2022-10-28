@@ -48,4 +48,13 @@ public class LottoTest {
         assertThat(actual).isEqualTo(expect);
     }
 
+    @Test
+    @DisplayName("랜덤 출력 확인 테스트")
+    public void showRandom() {
+        for (int i = 0; i < 6; i++) {
+            Lotto lotto = new Lotto();
+            System.out.println(lotto.getLottoNumbers());
+        }
+    }
+
 }
