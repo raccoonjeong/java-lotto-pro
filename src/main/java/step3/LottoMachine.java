@@ -16,10 +16,14 @@ public class LottoMachine {
         this.payment = sc.nextLong();
 
         System.out.println(lottoCount() + "개를 구매했습니다.");
+        issueLotto();
     }
 
     public LottoMachine(long payment) {
         this.payment = payment;
+
+        System.out.println(lottoCount() + "개를 구매했습니다.");
+        issueLotto();
     }
 
     public long lottoCount() {

@@ -13,12 +13,10 @@ public class LastWinningLotto {
         System.out.println("지난 주 당첨 번호를 입력해 주세요.");
         Scanner sc = new Scanner(System.in);
         winningLottoNumbers = makeListByString(sc.nextLine());
-        System.out.println(winningLottoNumbers);
     }
 
     public LastWinningLotto(String numbers) {
         winningLottoNumbers = makeListByString(numbers);
-        System.out.println(winningLottoNumbers);
     }
 
     private List<Integer> makeListByString(String numbers) {

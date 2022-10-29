@@ -87,4 +87,38 @@ public class LottoTest {
 
         assertThat(actual).isEqualTo(expect);
     }
+
+    @Test
+    @DisplayName("총 수령금 계산 테스트")
+    public void calculateTotalReward() {
+        final LastWinningLotto lastWinningLotto = new LastWinningLotto("1, 2, 3, 4, 5, 6");
+        final List<Lotto> myLottos = Arrays.asList(
+            new Lotto(Arrays.asList(1,2,3,7,8,9)),
+            new Lotto(Arrays.asList(1,2,7,8,9,10)),
+            new Lotto(Arrays.asList(4,5,6,7,8,9)));
+
+        LottoAnalyzer lottoAnalyzer = new LottoAnalyzer(lastWinningLotto, myLottos);
+
+        final long expect = 10_000;
+        final long actual = lottoAnalyzer.calculateReward();
+
+        assertThat(actual).isEqualTo(expect);
+    }
+
+    @Test
+    @DisplayName("총 수익률 계산 테스트")
+    public void calculateYield() {
+        final LastWinningLotto lastWinningLotto = new LastWinningLotto("1, 2, 3, 4, 5, 6");
+        final List<Lotto> myLottos = Arrays.asList(
+            new Lotto(Arrays.asList(1,2,3,7,8,9)),
+            new Lotto(Arrays.asList(1,2,7,8,9,10)),
+            new Lotto(Arrays.asList(4,5,6,7,8,9)));
+
+        LottoAnalyzer lottoAnalyzer = new LottoAnalyzer(lastWinningLotto, myLottos);
+
+        final double expect = (double)10_000 / (double)3_000;
+        final double actual = lottoAnalyzer.calculateYield(3_000);
+
+        assertThat(actual).isEqualTo(expect);
+    }
 }
