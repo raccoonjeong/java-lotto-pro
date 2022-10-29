@@ -8,8 +8,7 @@ public class LottoAnalyzer {
 
     public LottoAnalyzer(LastWinningLotto lastWinningLotto, List<Lotto> lottos) {
         for (Lotto lotto : lottos) {
-            Long rightCount = lastWinningLotto.howManyRight(lotto);
-            countBoard[rightCount.intValue()] ++;
+            countBoard[lastWinningLotto.howManyRight(lotto)] ++;
         }
     }
 

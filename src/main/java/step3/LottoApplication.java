@@ -3,7 +3,7 @@ package step3;
 import java.util.Scanner;
 
 public class LottoApplication {
-    private static Scanner sc = new Scanner(System.in);
+    private final static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
         System.out.println("구입금액을 입력해 주세요.");

@@ -8,10 +8,10 @@ public class Lotto {
 
     public static final int MAX = 45;
 
-    private List<Integer> lottoNumbers;
-    private List<Integer> numberBox = new ArrayList<>();
+    private final List<Integer> lottoNumbers;
 
     public Lotto() {
+        List<Integer> numberBox = new ArrayList<>();
         for (int i = 1; i <= MAX; i++) {
             numberBox.add(i);
         }

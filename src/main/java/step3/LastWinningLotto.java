@@ -6,29 +6,28 @@ import java.util.stream.Collectors;
 
 public class LastWinningLotto {
 
-    private List<Integer> winningLottoNumbers;
+    private final List<Integer> winningLottoNumbers;
 
     public LastWinningLotto(String numbers) {
         winningLottoNumbers = makeListByString(numbers);
     }
 
     private List<Integer> makeListByString(String numbers) {
-        return Arrays.asList(numbers.split(", "))
-            .stream()
-            .mapToInt(Integer::parseInt)
-            .boxed()
-            .collect(Collectors.toList());
+        return Arrays.stream(numbers.split(", "))
+                     .mapToInt(Integer::parseInt)
+                     .boxed()
+                     .collect(Collectors.toList());
     }
 
-    public LastWinningLotto(List numbers) {
+    public LastWinningLotto(List<Integer> numbers) {
         winningLottoNumbers = numbers;
     }
 
-    public long howManyRight(Lotto myLotto) {
+    public int howManyRight(Lotto myLotto) {
         List<Integer> myLottoNumbers = myLotto.getLottoNumbers();
-
-        return myLottoNumbers.stream()
-                             .filter(myNumber -> winningLottoNumbers.contains(myNumber))
-                             .count();
+        Long rightCount = myLottoNumbers.stream()
+                                        .filter(winningLottoNumbers::contains)
+                                        .count();
+        return rightCount.intValue();
     }
 }

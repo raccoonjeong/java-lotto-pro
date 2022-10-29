@@ -6,8 +6,8 @@ import java.util.List;
 public class LottoMachine {
 
     private final long LOTTO_SINGLE_PRICE = 1_000;
-    private long payment;
-    private List<Lotto> lottos = new ArrayList<>();
+    private final long payment;
+    private final List<Lotto> lottos = new ArrayList<>();
 
     public LottoMachine(long payment) {
         this.payment = payment;

@@ -15,8 +15,8 @@ public class LottoTest {
         final LastWinningLotto lastWinningLotto = new LastWinningLotto(Arrays.asList(1,2,3,4,5,6));
         final Lotto myLotto = new Lotto(Arrays.asList(1,2,3,7,8,9));
 
-        final long expect = 3;
-        final long actual = lastWinningLotto.howManyRight(myLotto);
+        final int expect = 3;
+        final int actual = lastWinningLotto.howManyRight(myLotto);
 
         assertThat(actual).isEqualTo(expect);
     }
@@ -41,10 +41,10 @@ public class LottoTest {
 
         LottoMachine lottoMachine = new LottoMachine(payment);
 
-        final long expect = 14;
+        final int expect = 14;
 
         List<Lotto> myLottos = lottoMachine.getLottos();
-        final long actual = myLottos.size();
+        final int actual = myLottos.size();
 
         assertThat(actual).isEqualTo(expect);
     }
@@ -64,8 +64,8 @@ public class LottoTest {
         final LastWinningLotto lastWinningLotto = new LastWinningLotto("1, 2, 3, 4, 5, 6");
         final Lotto myLotto = new Lotto(Arrays.asList(1,2,3,7,8,9));
 
-        final long expect = 3;
-        final long actual = lastWinningLotto.howManyRight(myLotto);
+        final int expect = 3;
+        final int actual = lastWinningLotto.howManyRight(myLotto);
 
         assertThat(actual).isEqualTo(expect);
     }
