@@ -6,6 +6,10 @@ import static org.assertj.core.api.Assertions.*;
 import java.util.List;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import step3.model.LastWinningLotto;
+import step3.model.Lotto;
+import step3.model.LottoAnalyzer;
+import step3.model.LottoMachine;
 
 public class LottoTest {
 
@@ -116,7 +120,7 @@ public class LottoTest {
         LottoAnalyzer lottoAnalyzer = new LottoAnalyzer(lastWinningLotto, myLottos);
 
         final double expect = (double)10_000 / (double)3_000;
-        final double actual = lottoAnalyzer.calculateYield(3_000);
+        final double actual = lottoAnalyzer.calculateYield();
 
         assertThat(actual).isEqualTo(expect);
     }

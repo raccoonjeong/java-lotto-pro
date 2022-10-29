@@ -1,4 +1,4 @@
-package step3;
+package step3.model;
 
 public enum MatchReward {
     THREE_MATCH(3, 5_000L),

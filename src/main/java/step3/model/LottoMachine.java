@@ -1,4 +1,4 @@
-package step3;
+package step3.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,8 +11,6 @@ public class LottoMachine {
 
     public LottoMachine(long payment) {
         this.payment = payment;
-
-        System.out.println(lottoCount() + "개를 구매했습니다.");
         issueLotto();
     }
 
