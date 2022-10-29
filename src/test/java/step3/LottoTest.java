@@ -42,7 +42,6 @@ public class LottoTest {
         LottoMachine lottoMachine = new LottoMachine(payment);
 
         final long expect = 14;
-        lottoMachine.issueLotto();
 
         List<Lotto> myLottos = lottoMachine.getLottos();
         final long actual = myLottos.size();
