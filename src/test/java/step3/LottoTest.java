@@ -42,7 +42,9 @@ public class LottoTest {
         LottoMachine lottoMachine = new LottoMachine(payment);
 
         final long expect = 14;
-        List<Lotto> myLottos = lottoMachine.issueLotto();
+        lottoMachine.issueLotto();
+
+        List<Lotto> myLottos = lottoMachine.getLottos();
         final long actual = myLottos.size();
 
         assertThat(actual).isEqualTo(expect);
@@ -65,6 +67,23 @@ public class LottoTest {
 
         final long expect = 3;
         final long actual = lastWinningLotto.howManyRight(myLotto);
+
+        assertThat(actual).isEqualTo(expect);
+    }
+
+    @Test
+    @DisplayName("3개 맞은게 몇개인가 테스트")
+    public void analyzeCount() {
+        final LastWinningLotto lastWinningLotto = new LastWinningLotto("1, 2, 3, 4, 5, 6");
+        final List<Lotto> myLottos = Arrays.asList(
+            new Lotto(Arrays.asList(1,2,3,7,8,9)),
+            new Lotto(Arrays.asList(1,2,7,8,9,10)),
+            new Lotto(Arrays.asList(4,5,6,7,8,9)));
+
+        LottoAnalyzer lottoAnalyzer = new LottoAnalyzer(lastWinningLotto, myLottos);
+
+        final int expect = 2;
+        final int actual = lottoAnalyzer.numberMatches(3);
 
         assertThat(actual).isEqualTo(expect);
     }

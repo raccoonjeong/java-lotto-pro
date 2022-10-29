@@ -16,7 +16,6 @@ public class LottoMachine {
         this.payment = sc.nextLong();
 
         System.out.println(lottoCount() + "개를 구매했습니다.");
-        lottos = issueLotto();
     }
 
     public LottoMachine(long payment) {
@@ -27,7 +26,7 @@ public class LottoMachine {
         return payment / LOTTO_SINGLE_PRICE;
     }
 
-    public List<Lotto> issueLotto() {
+    public void issueLotto() {
         List<Lotto> lottos = new ArrayList<>();
         long count = lottoCount();
 
@@ -35,6 +34,10 @@ public class LottoMachine {
             lottos.add(new Lotto());
         }
 
+        this.lottos = lottos;
+    }
+
+    public List<Lotto> getLottos() {
         return lottos;
     }
 }
