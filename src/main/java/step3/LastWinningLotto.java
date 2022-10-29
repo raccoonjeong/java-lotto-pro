@@ -2,18 +2,11 @@ package step3;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class LastWinningLotto {
 
     private List<Integer> winningLottoNumbers;
-
-    public LastWinningLotto() {
-        System.out.println("지난 주 당첨 번호를 입력해 주세요.");
-        Scanner sc = new Scanner(System.in);
-        winningLottoNumbers = makeListByString(sc.nextLine());
-    }
 
     public LastWinningLotto(String numbers) {
         winningLottoNumbers = makeListByString(numbers);
