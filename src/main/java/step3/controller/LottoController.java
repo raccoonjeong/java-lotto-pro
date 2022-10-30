@@ -20,9 +20,7 @@ public class LottoController {
 
     public void payment() {
         OutputView.printInputPayment();
-        long payment = InputView.inputPayment();
-
-        LottoMachine lottoMachine = new LottoMachine(payment);
+        LottoMachine lottoMachine = new LottoMachine(InputView.inputPayment());
         OutputView.printPayCount(lottoMachine.lottoCount());
 
         List<Lotto> lottos = lottoMachine.getLottos();
@@ -37,6 +35,8 @@ public class LottoController {
 
     public void analyzeLotto() {
         LottoAnalyzer lottoAnalyzer = new LottoAnalyzer(winLotto, myLottos);
+
+        OutputView.printWinsStatistics();
         double yield = lottoAnalyzer.calculateYield();
         String furtherExplain = lottoAnalyzer.furtherExplain(yield);
         OutputView.printResult(yield, furtherExplain);

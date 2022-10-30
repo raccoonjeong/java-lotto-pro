@@ -25,17 +25,12 @@ public class LottoAnalyzer {
     }
 
     public long calculateReward() {
-        OutputView.printWinsStatistics();
         long totalReward = 0;
         for (MatchReward reward : MatchReward.values()) {
             OutputView.printMatchCount(reward.getMatchCount(), reward.getReward(), countBoard[reward.getMatchCount()]);
             totalReward += countBoard[reward.getMatchCount()] * reward.getReward();
         }
         return totalReward;
-    }
-
-    public int[] getCountBoard() {
-        return countBoard;
     }
 
     public String furtherExplain(double yield) {
