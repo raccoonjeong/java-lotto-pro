@@ -6,6 +6,7 @@ import static org.assertj.core.api.Assertions.*;
 import java.util.List;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import step3.model.CountBoard;
 import step3.model.LastWinningLotto;
 import step3.model.Lotto;
 import step3.model.LottoAnalyzer;
@@ -83,7 +84,7 @@ public class LottoTest {
             new Lotto(Arrays.asList(1,2,7,8,9,10)),
             new Lotto(Arrays.asList(4,5,6,7,8,9)));
 
-        LottoAnalyzer lottoAnalyzer = new LottoAnalyzer(lastWinningLotto, myLottos);
+        LottoAnalyzer lottoAnalyzer = new LottoAnalyzer(lastWinningLotto, myLottos, new CountBoard());
 
         final int expect = 2;
         final int actual = lottoAnalyzer.numberMatches(3);
@@ -100,7 +101,7 @@ public class LottoTest {
             new Lotto(Arrays.asList(1,2,7,8,9,10)),
             new Lotto(Arrays.asList(4,5,6,7,8,9)));
 
-        LottoAnalyzer lottoAnalyzer = new LottoAnalyzer(lastWinningLotto, myLottos);
+        LottoAnalyzer lottoAnalyzer = new LottoAnalyzer(lastWinningLotto, myLottos, new CountBoard());
 
         final long expect = 10_000;
         final long actual = lottoAnalyzer.calculateReward();
@@ -117,7 +118,7 @@ public class LottoTest {
             new Lotto(Arrays.asList(1,2,7,8,9,10)),
             new Lotto(Arrays.asList(4,5,6,7,8,9)));
 
-        LottoAnalyzer lottoAnalyzer = new LottoAnalyzer(lastWinningLotto, myLottos);
+        LottoAnalyzer lottoAnalyzer = new LottoAnalyzer(lastWinningLotto, myLottos, new CountBoard());
 
         final double expect = (double)10_000 / (double)3_000;
         final double actual = lottoAnalyzer.calculateYield();

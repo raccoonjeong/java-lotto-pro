@@ -9,7 +9,7 @@ public class OutputView {
     }
 
     public static void printPayCount(long lottoCount) {
-        System.out.printf("%d개를 구매했습니다.", lottoCount);
+        System.out.printf("%d개를 구매했습니다.%n", lottoCount);
     }
 
     public static void printLottoNumbers(List lottoNumbers) {
@@ -24,11 +24,12 @@ public class OutputView {
         System.out.println("\n당첨 통계\n---------");
     }
 
-    public static void printMatchCount(int rank, long reward, int matchCount) {
-        System.out.printf("%d개 일치 (%d)- %d개%n", rank, reward, matchCount);
+    public static void printRankResult(String showRankResult) {
+        System.out.println(showRankResult);
     }
 
-    public static void printResult(double yield, String furtherExplain) {
+    public static void printYieldResult(double yield, String furtherExplain) {
         System.out.printf("총 수익률은 %.2f입니다.%s", yield, furtherExplain);
     }
+
 }

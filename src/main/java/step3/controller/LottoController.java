@@ -1,6 +1,7 @@
 package step3.controller;
 
 import java.util.List;
+import step3.model.CountBoard;
 import step3.model.LastWinningLotto;
 import step3.model.Lotto;
 import step3.model.LottoAnalyzer;
@@ -34,11 +35,15 @@ public class LottoController {
     }
 
     public void analyzeLotto() {
-        LottoAnalyzer lottoAnalyzer = new LottoAnalyzer(winLotto, myLottos);
+        CountBoard board = new CountBoard();
+        LottoAnalyzer lottoAnalyzer = new LottoAnalyzer(winLotto, myLottos, board);
 
         OutputView.printWinsStatistics();
+
         double yield = lottoAnalyzer.calculateYield();
+        OutputView.printRankResult(board.showRankResult());
+
         String furtherExplain = lottoAnalyzer.furtherExplain(yield);
-        OutputView.printResult(yield, furtherExplain);
+        OutputView.printYieldResult(yield, furtherExplain);
     }
 }
